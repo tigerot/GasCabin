@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="GasCabin.Views.MainPage"
+             Title="Gaz Kabini">
+
+
+    <Grid ColumnSpacing="10"
+          RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Image
+                Source="cropped_logoxx.png"
+                SemanticProperties.Description="Teknim Alarm Servisi"
+                HeightRequest="200"
+                VerticalOptions="Start"
+                Grid.Column="0"
+                Grid.Row="0"
+                />
+        <Label
+                Text="Port:"
+                HeightRequest="100"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Grid.Column="1"
+                Grid.Row="0"
+                />
+
+        <Entry  x:Name="PortEntry"
+                Placeholder="COM3"
+                TextChanged="OnEntryTextChanged"
+                HeightRequest="50"
+                VerticalOptions="Start"
+                Grid.Column="2"
+                Grid.Row="0"
+               />
+
+        <Label
+                Text="Cihaz Sayısı:"
+                HeightRequest="100"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Grid.Column="1"
+                Grid.Row="1"
+               />
+        <Entry  x:Name="DeviceEntry"
+                Placeholder="0"
+                TextChanged="OnEntryTextChanged"
+                HeightRequest="50"
+                VerticalOptions="Start"
+                Grid.Column="2"
+                Grid.Row="1"
+                Keyboard="Numeric"
+            >
+            <Entry.Behaviors>
+                <toolkit:NumericValidationBehavior 
+                Flags="ValidateOnValueChanged"
+                MinimumValue="1"
+                MaximumValue="4"
+                 />
+            </Entry.Behaviors>
+        </Entry>
+        <Label
+                Text="Adres 1:"
+                HeightRequest="100"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Grid.Column="3"
+                Grid.Row="0"
+               />
+        <Entry  x:Name="Address1Entry"
+                Placeholder="0"
+                TextChanged="OnEntryTextChanged"
+                HeightRequest="50"
+                VerticalOptions="Start"
+                Grid.Column="4"
+                Grid.Row="0"
+                IsReadOnly="false"
+               />
+        <Label
+                Text="Adres 2:"
+                HeightRequest="100"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Grid.Column="5"
+                Grid.Row="0"
+               />
+        <Entry  x:Name="Address2Entry"
+                Placeholder="0"
+                TextChanged="OnEntryTextChanged"
+                HeightRequest="50"
+                VerticalOptions="Start"
+                Grid.Column="6"
+                Grid.Row="0"
+                IsReadOnly="true"
+               />
+        <Label
+                Text="Adres 3:"
+                HeightRequest="100"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Grid.Column="3"
+                Grid.Row="1"
+               />
+        <Entry  x:Name="Address3Entry"
+                Placeholder="0"
+                TextChanged="OnEntryTextChanged"
+                HeightRequest="50"
+                VerticalOptions="Start"
+                Grid.Column="4"
+                Grid.Row="1"
+                IsReadOnly="true"
+               />
+        <Label
+                Text="Adres 4:"
+                HeightRequest="100"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Grid.Column="5"
+                Grid.Row="1"
+               />
+        <Entry  x:Name="Address4Entry"
+                Placeholder="0"
+                TextChanged="OnEntryTextChanged"
+                HeightRequest="50"
+                VerticalOptions="Start"
+                Grid.Column="6"
+                Grid.Row="1"
+                IsReadOnly="true"
+               />
+        <Button Text="Bağlan"
+                Clicked="ConnectButton_Clicked" 
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Grid.Column="0"
+                Grid.Row="2"/>
+        <Button Text="Bağlantıyı Kes"
+                Clicked="DisconnectButton_Clicked" 
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Grid.Column="1"
+                Grid.Row="2"/>
+        <Button Text="Algıla"
+                Clicked="DetectButton_Clicked" 
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Grid.Column="2"
+                Grid.Row="2"/>
+        <Label
+                Text="Algılanan Dedektör Sayısı :"
+                HeightRequest="100"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                Grid.Column="1"
+                Grid.Row="4"
+               />
+        <Entry  x:Name="DetectionDeviceEntry"
+                TextChanged="OnEntryTextChanged"
+                HeightRequest="50"
+                WidthRequest="200"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                Grid.Column="2"
+                Grid.Row="4"
+                IsReadOnly="True" />
+    </Grid>
+</ContentPage>

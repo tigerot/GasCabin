@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GasCabin.Views.SettingsPage"
+             Title="Ayarlar">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0"
+               Grid.Row="0"
+               Text="Sapma 1:"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               />
+        <Entry x:Name="DeviationOfAddress1"
+               Placeholder="0"
+               TextChanged="OnEntryTextChanged"
+               Grid.Column="1"
+               Grid.Row="0"/>
+        <Label Grid.Column="0"
+               Grid.Row="1"
+               Text="Sapma 2:"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               />
+        <Entry x:Name="DeviationOfAddress2"
+               Placeholder="0"
+               TextChanged="OnEntryTextChanged"
+               Grid.Column="1"
+               Grid.Row="1"/>
+        <Label Grid.Column="0"
+               Grid.Row="2"
+               Text="Sapma 3:"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               />
+        <Entry x:Name="DeviationOfAddress3"
+               Placeholder="0"
+               TextChanged="OnEntryTextChanged"
+               Grid.Column="1"
+               Grid.Row="2"/>
+        <Label Grid.Column="0"
+               Grid.Row="3"
+               Text="Sapma 4:"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               />
+        <Entry x:Name="DeviationOfAddress4"
+               Placeholder="0"
+               TextChanged="OnEntryTextChanged"
+               Grid.Column="1"
+               Grid.Row="3"/>
+        <Button Text="Kaydet"
+                Clicked="SaveButton_Clicked" 
+                Grid.Column="0"
+                Grid.Row="4"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+    </Grid>
+</ContentPage>
